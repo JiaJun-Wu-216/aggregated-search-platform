@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults, defineProps } from "vue";
+import {defineProps, withDefaults} from "vue";
 
 interface Props {
   pictureList: any[];

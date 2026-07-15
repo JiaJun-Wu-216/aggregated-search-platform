@@ -2,7 +2,7 @@
   <div class="my-divider"></div>
 </template>
 
-<script></script>
+<script setup></script>
 
 <style scoped>
 .my-divider {

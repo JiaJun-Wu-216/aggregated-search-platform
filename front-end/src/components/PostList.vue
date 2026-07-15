@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import gege from "../assets/gege.jpg";
-import { withDefaults, defineProps } from "vue";
+import {defineProps, withDefaults} from "vue";
 
 interface Props {
   postList: any[];

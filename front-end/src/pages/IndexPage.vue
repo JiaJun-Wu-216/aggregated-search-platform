@@ -23,14 +23,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watchEffect } from "vue";
+import {ref, watchEffect} from "vue";
 import PostList from "@/components/PostList.vue";
 import PictureList from "@/components/PictureList.vue";
 import UserList from "@/components/UserList.vue";
 import MyDivider from "@/components/MyDivider.vue";
-import { useRoute, useRouter } from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import myAxios from "@/plugins/myAxios";
-import { message } from "ant-design-vue";
+import {message} from "ant-design-vue";
 
 const postList = ref([]);
 
