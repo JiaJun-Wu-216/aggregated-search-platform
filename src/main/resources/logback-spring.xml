@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
     <!-- 修改一下路径-->
-    <property name="MODULE_NAME" value="account-server"/>
+    <!--<property name="MODULE_NAME" value="account-server"/>-->
     <property name="MODULE_ROOT" value="${user.dir}"/>
     <property name="PATH" value="${MODULE_ROOT}/logs"/>
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <!-- <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %blue(%-50logger{50}:%-4line) %thread %msg%n</Pattern>-->
-            <Pattern>
-                %d{yyyy-MM-dd HH:mm:ss.SSS} %highlight(%-5level) %blue(%-30logger{30}:%-4line) %thread %green(%-16X{LOG_ID}) %msg%n
-            </Pattern>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %clr(%-5level) %-30logger{30}:%method:%-4line [%magenta(%-16X{LOG_ID})] : %clr(%msg) %n
+            </pattern>
         </encoder>
     </appender>
 
@@ -23,7 +24,9 @@
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <layout>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %-50logger{50}:%-4line %thread %green(%-16X{LOG_ID}) %msg%n
+            <charset>UTF-8</charset>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %-30logger{30}:%method:%-4line [%-16X{LOG_ID}] : %msg %n
             </pattern>
         </layout>
     </appender>
@@ -37,7 +40,9 @@
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <layout>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %-50logger{50}:%-4line %thread %green(%-16X{LOG_ID}) %msg%n
+            <charset>UTF-8</charset>
+            <pattern>
+                %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %-30logger{30}:%method:%-4line [%-16X{LOG_ID}] : %msg %n
             </pattern>
         </layout>
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
@@ -46,6 +51,9 @@
             <onMismatch>DENY</onMismatch>
         </filter>
     </appender>
+
+    <!-- 新增：切面日志专属 DEBUG 级别配置 -->
+    <logger name="com.chipswu.aggregatedsearchplatform.aop.LogAspect" level="DEBUG" additivity="true"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
