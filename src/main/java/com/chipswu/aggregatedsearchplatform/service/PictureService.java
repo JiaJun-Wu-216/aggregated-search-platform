@@ -1,6 +1,6 @@
 package com.chipswu.aggregatedsearchplatform.service;
 
-import com.chipswu.aggregatedsearchplatform.domain.entity.Picture;
+import com.chipswu.aggregatedsearchplatform.model.entity.Picture;
 import com.mybatisflex.core.service.IService;
 
 /**

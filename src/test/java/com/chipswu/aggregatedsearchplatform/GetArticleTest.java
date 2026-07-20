@@ -1,8 +1,8 @@
 package com.chipswu.aggregatedsearchplatform;
 
 import cn.hutool.core.util.RandomUtil;
-import com.chipswu.aggregatedsearchplatform.domain.entity.Article;
 import com.chipswu.aggregatedsearchplatform.mapper.ArticleMapper;
+import com.chipswu.aggregatedsearchplatform.model.entity.Article;
 import com.mybatisflex.core.update.UpdateChain;
 import jakarta.annotation.Resource;
 import lombok.Data;
@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.chipswu.aggregatedsearchplatform.domain.entity.table.ArticleTableDef.ARTICLE;
+import static com.chipswu.aggregatedsearchplatform.model.entity.table.ArticleTableDef.ARTICLE;
 
 /**
  *

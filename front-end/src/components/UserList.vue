@@ -10,8 +10,8 @@
           <template #cover>
             <img alt="example" :src="gege" />
           </template>
-          <a-card-meta :title="item.userName">
-            <template #description>{{ item.userProfile }}</template>
+          <a-card-meta :title="item.username">
+            <template #description>{{ item.profile }}</template>
           </a-card-meta>
         </a-card>
       </a-list-item>

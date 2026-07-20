@@ -1,4 +1,4 @@
-package com.chipswu.aggregatedsearchplatform.domain.entity;
+package com.chipswu.aggregatedsearchplatform.model.entity;
 
 import com.mybatisflex.annotation.Column;
 import com.mybatisflex.annotation.Id;
@@ -12,37 +12,32 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * 用户实体类
+ * 图片实体类
  *
  * @author WuJiaJun
  */
 @Data
-@Table(value = "users")
-public class User implements Serializable {
+@Table(value = "pictures")
+public class Picture implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = 5372566376122036582L;
+    private static final long serialVersionUID = -7736727466700271031L;
 
     /**
-     * 用户主键
+     * 图片主键
      */
-    @Id(keyType = KeyType.Generator,value = KeyGenerators.snowFlakeId)
-    private Integer id;
+    @Id(keyType = KeyType.Generator, value = KeyGenerators.snowFlakeId)
+    private Long id;
 
     /**
-     * 用户名
+     * 标题
      */
-    private String username;
+    private String title;
 
     /**
-     * 个人简介
+     * 图片链接
      */
-    private String profile;
-
-    /**
-     * 头像
-     */
-    private String avatar;
+    private String url;
 
     /**
      * 创建时间
@@ -53,5 +48,6 @@ public class User implements Serializable {
     /**
      * 更新时间
      */
+    @Column(onInsertValue = "now()")
     private LocalDateTime updateTime;
 }

@@ -1,5 +1,6 @@
 ### COMMON ###
 application-dev.yaml
+http_ca.crt
 
 target/
 .mvn/wrapper/maven-wrapper.jar

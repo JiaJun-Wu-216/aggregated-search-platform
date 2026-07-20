@@ -9,8 +9,8 @@
     />
     <MyDivider />
     <a-tabs v-model:activeKey="activeKey" @change="onTabChange">
-      <a-tab-pane key="post" tab="文章">
-        <PostList :post-list="postList" />
+      <a-tab-pane key="article" tab="文章">
+        <ArticleList :article-list="articleList" />
       </a-tab-pane>
       <a-tab-pane key="picture" tab="图片">
         <PictureList :picture-list="pictureList" />
@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 import {ref, watchEffect} from 'vue'
-import PostList from '@/components/PostList.vue'
+import ArticleList from '@/components/ArticleList.vue'
 import PictureList from '@/components/PictureList.vue'
 import UserList from '@/components/UserList.vue'
 import MyDivider from '@/components/MyDivider.vue'
@@ -32,7 +32,7 @@ import {useRoute, useRouter} from 'vue-router'
 import myAxios from '@/plugins/myAxios'
 import {message} from 'ant-design-vue'
 
-const postList = ref([])
+const articleList = ref([])
 
 const userList = ref([])
 
@@ -52,36 +52,6 @@ const initSearchParams = {
 const searchText = ref(route.query.text || '')
 
 /**
- * 加载数据
- * @param params
- */
-const loadDataOld = (params: any) => {
-  const postQuery = {
-    ...params,
-    searchText: params.text,
-  }
-  myAxios.post('post/list/page/vo', postQuery).then((res: any) => {
-    postList.value = res.records
-  })
-
-  const userQuery = {
-    ...params,
-    userName: params.text,
-  }
-  myAxios.post('user/list/page/vo', userQuery).then((res: any) => {
-    userList.value = res.records
-  })
-
-  const pictureQuery = {
-    ...params,
-    searchText: params.text,
-  }
-  myAxios.post('picture/list/page/vo', pictureQuery).then((res: any) => {
-    pictureList.value = res.records
-  })
-}
-
-/**
  * 加载聚合数据
  * @param params
  */
@@ -91,7 +61,7 @@ const loadAllData = (params: any) => {
     searchText: params.text,
   }
   myAxios.post('search/all', query).then((res: any) => {
-    postList.value = res.postList
+    articleList.value = res.postList
     userList.value = res.userList
     pictureList.value = res.pictureList
   })
@@ -102,7 +72,7 @@ const loadAllData = (params: any) => {
  * @param params
  */
 const loadData = (params: any) => {
-  const { type = 'post' } = params
+  const { type = 'article' } = params
   if (!type) {
     message.error('类别为空')
     return
@@ -111,9 +81,9 @@ const loadData = (params: any) => {
     ...params,
     searchText: params.text,
   }
-  myAxios.post('search/all', query).then((res: any) => {
-    if (type === 'post') {
-      postList.value = res.dataList
+  myAxios.post('/search/all', query).then((res: any) => {
+    if (type === 'article') {
+      articleList.value = res.dataList
     } else if (type === 'user') {
       userList.value = res.dataList
     } else if (type === 'picture') {

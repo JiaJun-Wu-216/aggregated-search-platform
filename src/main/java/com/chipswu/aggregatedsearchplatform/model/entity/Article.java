@@ -1,4 +1,4 @@
-package com.chipswu.aggregatedsearchplatform.domain.entity;
+package com.chipswu.aggregatedsearchplatform.model.entity;
 
 import com.mybatisflex.annotation.Column;
 import com.mybatisflex.annotation.Id;
@@ -24,6 +24,28 @@ public class Article implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 47963581080514183L;
+
+    public Article() {
+    }
+
+    public Article(Long id, String title, String author, String avatar, LocalDateTime createTime, LocalDateTime updateTime) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.avatar = avatar;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+    }
+
+    public Article(Long id, String title, String author, String avatar, LocalDateTime createTime, LocalDateTime updateTime, String highlightTitle) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.avatar = avatar;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
+        this.highlightTitle = highlightTitle;
+    }
 
     /**
      * 文章主键
@@ -57,4 +79,7 @@ public class Article implements Serializable {
      */
     @Column(onInsertValue = "now()")
     private LocalDateTime updateTime;
+
+    @Column(ignore = true)
+    private String highlightTitle;
 }

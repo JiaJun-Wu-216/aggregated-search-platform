@@ -1,7 +1,7 @@
 package com.chipswu.aggregatedsearchplatform.service.impl;
 
-import com.chipswu.aggregatedsearchplatform.domain.entity.Picture;
 import com.chipswu.aggregatedsearchplatform.mapper.PictureMapper;
+import com.chipswu.aggregatedsearchplatform.model.entity.Picture;
 import com.chipswu.aggregatedsearchplatform.service.PictureService;
 import com.mybatisflex.spring.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;

@@ -12,9 +12,23 @@ spring:
     url: jdbc:mysql://localhost:3306/aggregated_search_platform
     username: root
     password: 123456
+  elasticsearch:
+    uris: https://localhost:9200
+    username: elastic
+    password: 123456
+    restclient:
+      ssl:
+        bundle: es-trust
+  ssl:
+    bundle:
+      pem:
+        es-trust: # Bundle 名称（自定义）
+          truststore:
+            certificate: classpath:http_ca.crt
 mybatis-flex:
   configuration:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
 logging:
   level:
     com.chipswu.aggregatedsearchplatform.mapper: DEBUG
+    com.chipswu.aggregatedsearchplatform.service.impl.ArticleServiceImpl: debug

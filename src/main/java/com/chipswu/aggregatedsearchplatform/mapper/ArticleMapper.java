@@ -1,6 +1,6 @@
 package com.chipswu.aggregatedsearchplatform.mapper;
 
-import com.chipswu.aggregatedsearchplatform.domain.entity.Article;
+import com.chipswu.aggregatedsearchplatform.model.entity.Article;
 import com.mybatisflex.core.BaseMapper;
 
 /**
