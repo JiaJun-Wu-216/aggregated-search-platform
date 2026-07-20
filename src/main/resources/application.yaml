@@ -30,5 +30,5 @@ mybatis-flex:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
 logging:
   level:
-    com.chipswu.aggregatedsearchplatform.mapper: DEBUG
+    com.chipswu.aggregatedsearchplatform.config.AuditSqlMessageCollector: DEBUG
     com.chipswu.aggregatedsearchplatform.service.impl.ArticleServiceImpl: debug

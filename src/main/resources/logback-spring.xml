@@ -54,6 +54,7 @@
 
     <!-- 新增：切面日志专属 DEBUG 级别配置 -->
     <logger name="com.chipswu.aggregatedsearchplatform.aop.LogAspect" level="DEBUG" additivity="true"/>
+    <logger name="com.chipswu.aggregatedsearchplatform.config.MyBatisFlexConfig" level="DEBUG" additivity="true"/>
 
     <root level="INFO">
         <appender-ref ref="STDOUT"/>

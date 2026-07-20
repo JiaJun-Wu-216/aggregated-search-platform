@@ -52,4 +52,10 @@ public class UserTest {
         }
         userMapper.insertBatch(userList);
     }
+
+    @Test
+    public void insertOneUser(){
+        User user = User.builder().username(RandomUtil.randomString(5)).build();
+        userMapper.insert(user);
+    }
 }
