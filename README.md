@@ -8,23 +8,28 @@
 
 - 聚合搜索页面-搜文章
 
-![image-20260721125838617](E:\Project\aggregated-search-platform\assets\image-20260721125838617.png)
+<img width="1057" height="498" alt="image-20260721125838617" src="https://github.com/user-attachments/assets/b74962e1-9180-47f7-9348-1f2a40e8ae66" />
+
 
 - 聚合搜索页面-搜图片
 
-![image-20260721130029900](E:\Project\aggregated-search-platform\assets\image-20260721130029900.png)
+<img width="1054" height="743" alt="image-20260721130029900" src="https://github.com/user-attachments/assets/ead17d25-b7fe-4ac8-a2f0-a763704fb762" />
+
 
 - 聚合搜索页面-搜用户
 
-![image-20260721130125991](E:\Project\aggregated-search-platform\assets\image-20260721130125991.png)
+<img width="1110" height="394" alt="image-20260721130125991" src="https://github.com/user-attachments/assets/45dd3f1a-3de3-41a1-a606-1a7aada314e9" />
+
 
 - Elastic Stack - Kibana 数据可视化
 
-![image-20260721131048028](E:\Project\aggregated-search-platform\assets\image-20260721131048028.png)
+<img width="1737" height="911" alt="image-20260721131048028" src="https://github.com/user-attachments/assets/d664a5ed-4eab-42c8-8c04-2702b4ec610e" />
+
 
 - 项目架构图
 
-![image-20260721131249817](E:\Project\aggregated-search-platform\assets\image-20260721131249817.png)
+<img width="1411" height="909" alt="image-20260721131249817" src="https://github.com/user-attachments/assets/2ebb2e64-5628-4b68-99af-84bc939bd800" />
+
 
 # 技术选型（全栈项目）
 ## 前端
@@ -58,7 +63,8 @@
 
 ## 策略设计模式
 
-![image-20260721132610663](E:\Project\aggregated-search-platform\assets\image-20260721132610663.png)
+<img width="1441" height="700" alt="image-20260721132610663" src="https://github.com/user-attachments/assets/fb106cbd-cadd-4e7b-a09e-c1b7261caf1c" />
+
 
 注册器模式的主要目的是在应用程序中全局注册一些对象，便于被其他对象发现和使用，常用于管理和维护一组单例的全局对象。
 使用注册器模式后，不仅能更方便地集中查找和获取全局对象，还避免了反复初始化的内存和时间开销。
@@ -239,7 +245,8 @@ String url = String.format("https://cn.bing.com/images/search?q=%s&first=%s", se
 
 ## 使用 Cloud Canal 进行数据同步
 
-![image-20260721162810482](E:\Project\aggregated-search-platform\assets\image-20260721162810482.png)
+<img width="1920" height="911" alt="image-20260721162810482" src="https://github.com/user-attachments/assets/8dd95d69-eb69-4fac-a526-484cb45e3463" />
+
 
 将 MySQL 的 aggregated-search-platform.articles 表内容同步至 ElasticSearch 的 articles_es 索引中
 
