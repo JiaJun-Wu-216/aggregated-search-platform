@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
  */
 @Getter
 public enum SearchTypeEnum {
+    ALL("全部资源", "all"),
     ARTICLE("文章", "article"),
     USER("用户", "user"),
     PICTURE("图片", "picture"),

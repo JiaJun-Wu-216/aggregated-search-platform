@@ -85,8 +85,7 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
                 b.should(shouldClauses);
                 b.minimumShouldMatch("1");
             } else {
-                // ✅ 关键修复：无任何搜索条件时，显式匹配所有文档
-                // 避免纯 filter + score 排序导致的异常行为
+                // 关键修复：无任何搜索条件时，显式匹配所有文档，避免纯 filter + score 排序导致的异常行为
                 b.must(m -> m.matchAll(ma -> ma));
             }
             return b;
@@ -126,10 +125,10 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> impl
                     ? SortOrder.Asc : SortOrder.Desc;
             sortOptions.add(SortOptions.of(s -> s.field(f -> f.field(sortField).order(order))));
         } else if (!shouldClauses.isEmpty()) {
-            // ✅ 只有存在文本搜索时才按评分排序
+            // 只有存在文本搜索时才按评分排序
             sortOptions.add(SortOptions.of(s -> s.score(sc -> sc.order(SortOrder.Desc))));
         } else {
-            // ✅ 纯过滤查询时，必须有确定性排序字段，否则分页结果不稳定
+            // 纯过滤查询时，必须有确定性排序字段，否则分页结果不稳定
             sortOptions.add(SortOptions.of(s -> s.field(f -> f.field("id").order(SortOrder.Desc))));
         }
 
